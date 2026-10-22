@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Village Product | गाँव की कला, आपके घर तक</title>
+<style>
+:root{--nav:#131921;--nav2:#232f3e;--gold:#febd69;--bg:#eaeded;--green:#176b45;--text:#17202a}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.top{background:var(--nav);color:white;padding:12px 4%;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:800;white-space:nowrap;color:white}.logo span{color:var(--gold)}.tag{font-size:11px;color:#ddd}
+.search{display:flex;flex:1;min-width:220px;height:42px}.search select{width:100px;border:0;background:#eee;padding:8px;border-radius:5px 0 0 5px}.search input{flex:1;min-width:70px;border:0;padding:10px;font-size:15px}.search button{border:0;background:var(--gold);padding:0 17px;font-size:20px;border-radius:0 5px 5px 0;cursor:pointer}
+.toplink{font-size:13px;line-height:1.4}.cartbtn{border:1px solid #87909b;background:transparent;color:white;padding:10px;border-radius:5px;font-weight:bold;cursor:pointer}
+.nav{background:var(--nav2);color:white;padding:10px 4%;display:flex;gap:22px;overflow-x:auto;white-space:nowrap}.nav a{color:white;text-decoration:none;font-size:14px}
+.hero{margin:0 auto;max-width:1400px;min-height:245px;padding:35px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(110deg,#d8e8d2,#f7e6c9 65%,#d7b48b)}
+.hero h1{font-size:clamp(28px,4vw,48px);margin:0 0 12px;color:#183d2d}.hero p{font-size:17px;line-height:1.5;max-width:570px}.hero .cta{background:#176b45;color:white;padding:12px 18px;border:0;border-radius:6px;font-weight:bold;cursor:pointer}.heroart{font-size:clamp(75px,12vw,145px);filter:drop-shadow(0 7px 4px #0002)}
+.wrap{max-width:1400px;margin:auto;padding:18px 4%}.notice{background:white;border-radius:6px;padding:13px 16px;margin:0 0 18px;font-size:14px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0 12px}.sectionhead h2{font-size:22px;margin:0}.sectionhead small{color:#555}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{background:white;border:0;border-radius:7px;padding:17px;text-align:center;cursor:pointer;box-shadow:0 1px 3px #0001}.cat .emoji{font-size:43px}.cat strong{display:block;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.product{background:white;border-radius:7px;padding:14px;display:flex;flex-direction:column;min-width:0;box-shadow:0 1px 3px #0001}.pic{height:145px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:linear-gradient(135deg,#f8f0df,#e4d4b8);font-size:76px;margin-bottom:12px}.product h3{font-size:16px;line-height:1.35;margin:0 0 7px}.desc{font-size:12px;color:#666;line-height:1.4;min-height:32px}.price{font-size:22px;font-weight:bold;margin:9px 0 3px}.old{font-size:12px;color:#666;text-decoration:line-through;margin-left:5px}.rating{color:#b56a00;font-size:13px;margin:4px 0 10px}.add{margin-top:auto;background:#ffd814;border:0;border-radius:20px;padding:10px;font-weight:bold;cursor:pointer}.add:hover{background:#f7ca00}.buy{background:#ff9900;border:0;border-radius:20px;padding:9px;margin-top:7px;cursor:pointer}
+footer{background:var(--nav2);color:white;text-align:center;padding:25px 15px;margin-top:25px;font-size:13px;line-height:1.7}
+.overlay{display:none;position:fixed;inset:0;background:#0008;z-index:5}.drawer{position:fixed;z-index:6;right:-430px;top:0;height:100%;width:min(420px,100%);background:white;padding:20px;overflow:auto;transition:right .25s}.drawer.open{right:0}.overlay.show{display:block}.drawerhead{display:flex;justify-content:space-between;align-items:center}.close{font-size:26px;border:0;background:transparent;cursor:pointer}.cartitem{display:grid;grid-template-columns:45px 1fr auto;gap:10px;align-items:center;border-bottom:1px solid #ddd;padding:12px 0}.cartitem .mini{font-size:30px}.qty{display:flex;gap:8px;align-items:center;margin-top:5px}.qty button{width:27px;height:27px;border:1px solid #ccc;background:#f5f5f5;border-radius:4px}.total{font-size:22px;font-weight:bold;margin:20px 0}.wa{background:#168c50;color:white;border:0;border-radius:7px;padding:13px;width:100%;font-size:16px;font-weight:bold;cursor:pointer}.empty{text-align:center;padding:40px 5px;color:#666}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.categories{grid-template-columns:repeat(2,1fr)}.hero{min-height:210px}.heroart{font-size:85px}}
+@media(max-width:560px){.top{gap:10px;padding:12px 3%}.logo{font-size:22px}.toplink{display:none}.search{order:3;flex-basis:100%}.nav{padding:10px 3%;gap:17px}.hero{padding:25px 5%;min-height:190px}.hero p{font-size:14px}.heroart{font-size:65px}.wrap{padding:14px 3%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product{padding:10px}.pic{height:115px;font-size:60px}.product h3{font-size:14px}.price{font-size:19px}.sectionhead h2{font-size:19px}.desc{min-height:45px}.cat{padding:13px 8px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div><div class="logo">Village<span> Product</span></div><div class="tag">गाँव की कला, आपके घर तक</div></div>
+  <div class="toplink">🌾 स्थानीय कारीगरों के उत्पाद<br><b>देसी • हस्तनिर्मित • खास</b></div>
+  <div class="search"><select id="categorySelect" aria-label="कैटेगरी"><option value="all">सभी कैटेगरी</option><option value="clay">मिट्टी</option><option value="wood">लकड़ी</option></select><input id="searchInput" type="search" placeholder="Village Product में खोजें..." aria-label="सामान खोजें"><button id="searchBtn" aria-label="खोजें">⌕</button></div>
+  <button class="cartbtn" id="openCart">🛒 कार्ट <span id="cartCount">0</span></button>
+</header>
+<nav class="nav"><a href="#home">☰ सभी</a><a href="#categories">कैटेगरी</a><a href="#products">सभी प्रोडक्ट</a><a href="#products" data-filter="clay">मिट्टी के सामान</a><a href="#products" data-filter="wood">लकड़ी के सामान</a><a href="#footer">हमारे बारे में</a></nav>
+<section class="hero" id="home">
+ <div><div style="font-weight:bold;color:#176b45;margin-bottom:8px">🌱 गाँव से सीधे आपके घर तक</div><h1>अपनाएँ देसी अंदाज़,<br>सहेजें गाँव की कला</h1><p>मिट्टी और लकड़ी से बने सुंदर, पारंपरिक सामान खोजें। स्थानीय कारीगरों को दें अपना साथ।</p><button class="cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">अभी खरीदें →</button></div>
+ <div class="heroart" aria-hidden="true">🏺🪵</div>
+</section>
+<main class="wrap">
+ <div class="notice">🚚 <b>कारीगरों का साथ, गाँव की पहचान!</b> पसंद का सामान कार्ट में जोड़ें और WhatsApp पर ऑर्डर भेजें।</div>
+ <section id="categories"><div class="sectionhead"><h2>अपनी पसंद की कैटेगरी</h2><small>हस्तनिर्मित उत्पाद</small></div>
+  <div class="categories">
+   <button class="cat" data-cat="clay"><div class="emoji">🏺</div><strong>मिट्टी के सामान</strong><small>घड़े, सुराही, कुल्हड़</small></button>
+   <button class="cat" data-cat="wood"><div class="emoji">🪵</div><strong>लकड़ी के सामान</strong><small>चम्मच, खिलौने, सजावट</small></button>
+   <button class="cat" data-cat="clay"><div class="emoji">🪔</div><strong>दीये और सजावट</strong><small>घर और त्योहार के लिए</small></button>
+   <button class="cat" data-cat="wood"><div class="emoji">🧸</div><strong>हस्तनिर्मित गिफ्ट</strong><small>देसी और अनोखे</small></button>
+  </div>
+ </section>
+ <section id="products"><div class="sectionhead"><h2>लोकप्रिय प्रोडक्ट</h2><small id="resultCount"></small></div><div class="grid" id="productGrid"></div></section>
+</main>
+<footer id="footer"><b style="font-size:20px">Village Product</b><br>गाँव की कला, आपके घर तक ❤️<br>मिट्टी और लकड़ी के सामान • स्थानीय कारीगरों का सम्मान<br><span>ऑर्डर WhatsApp पर भेजे जाते हैं। सामान और कीमतें डेमो हैं—बेचने से पहले अपनी असली जानकारी अपडेट करें।</span></footer>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="शॉपिंग कार्ट">
+ <div class="drawerhead"><h2>🛒 आपका कार्ट</h2><button class="close" id="closeCart" aria-label="बंद करें">×</button></div>
+ <div id="cartItems"></div><div class="total" id="cartTotal">कुल: ₹0</div>
+ <h3>ऑर्डर की जानकारी</h3>
+ <label for="customerName">आपका नाम</label><input id="customerName" placeholder="पूरा नाम" style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccc;border-radius:5px">
+ <label for="customerPhone">मोबाइल नंबर</label><input id="customerPhone" type="tel" placeholder="10 अंकों का नंबर" style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccc;border-radius:5px">
+ <label for="customerAddress">डिलीवरी का पता</label><textarea id="customerAddress" placeholder="गाँव/शहर, जिला, पिन कोड" rows="3" style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccc;border-radius:5px"></textarea>
+ <button class="wa" id="sendOrder">🟢 WhatsApp पर ऑर्डर भेजें</button>
+ <p style="font-size:12px;color:#666">बटन दबाने पर WhatsApp खुलेगा। भेजने से पहले ऑर्डर का मैसेज जाँच लें।</p>
+</aside>
+<script>
+const WHATSAPP_NUMBER = "918463017119"; // भारत का देश कोड +91
+const products = [
+ {id:1,name:"पारंपरिक मिट्टी का घड़ा",cat:"clay",price:299,old:349,emoji:"🏺",desc:"पानी रखने के लिए पारंपरिक मिट्टी का घड़ा"},
+ {id:2,name:"मिट्टी की सुराही",cat:"clay",price:249,old:299,emoji:"🫖",desc:"घर के लिए सुंदर देसी सुराही"},
+ {id:3,name:"मिट्टी के कुल्हड़ (6 पीस)",cat:"clay",price:149,old:179,emoji:"🥤",desc:"चाय और पेय के लिए कुल्हड़ का सेट"},
+ {id:4,name:"मिट्टी के दीये (12 पीस)",cat:"clay",price:199,old:249,emoji:"🪔",desc:"पूजा और त्योहार के लिए दीये"},
+ {id:5,name:"मिट्टी का प्लांटर",cat:"clay",price:179,old:219,emoji:"🪴",desc:"पौधों और घर की सजावट के लिए"},
+ {id:6,name:"हस्तनिर्मित लकड़ी की चम्मच",cat:"wood",price:99,old:129,emoji:"🥄",desc:"रसोई के लिए देसी लकड़ी की चम्मच"},
+ {id:7,name:"लकड़ी का सजावटी शोपीस",cat:"wood",price:399,old:499,emoji:"🪵",desc:"टेबल और शेल्फ की सजावट के लिए"},
+ {id:8,name:"लकड़ी का खिलौना",cat:"wood",price:249,old:299,emoji:"🧸",desc:"पारंपरिक शैली का लकड़ी का खिलौना"},
+ {id:9,name:"लकड़ी का छोटा स्टूल",cat:"wood",price:599,old:699,emoji:"🪑",desc:"घर के उपयोग के लिए छोटा स्टूल"},
+ {id:10,name:"मिट्टी का मसाला बर्तन सेट",cat:"clay",price:349,old:399,emoji:"🏺",desc:"रसोई में रखने के लिए देसी बर्तन सेट"},
+ {id:11,name:"लकड़ी की सर्विंग ट्रे",cat:"wood",price:299,old:359,emoji:"🍱",desc:"नाश्ता और चाय परोसने के लिए"},
+ {id:12,name:"लकड़ी की सजावटी प्लेट",cat:"wood",price:279,old:329,emoji:"🪵",desc:"हस्तनिर्मित देसी सजावट"}
+];
+let cart = {};
+const grid=document.getElementById('productGrid');
+function money(n){return '₹'+n.toLocaleString('en-IN')}
+function renderProducts(){
+ const q=document.getElementById('searchInput').value.trim().toLowerCase();
+ const cat=document.getElementById('categorySelect').value;
+ const filtered=products.filter(p=>(cat==='all'||p.cat===cat)&&(!q||(p.name+' '+p.desc+' '+(p.cat==='clay'?'मिट्टी clay':'लकड़ी wood')).toLowerCase().includes(q)));
+ document.getElementById('resultCount').textContent=filtered.length+' सामान';
+ grid.innerHTML=filtered.length?filtered.map(p=>`<article class="product"><div class="pic" aria-label="${p.name}">${p.emoji}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="rating">★★★★★ <span style="color:#555">लोकप्रिय</span></div><div class="price">${money(p.price)} <span class="old">${money(p.old)}</span></div><button class="add" onclick="addToCart(${p.id})">🛒 कार्ट में जोड़ें</button><button class="buy" onclick="buyNow(${p.id})">WhatsApp से ऑर्डर</button></article>`).join(''):'<div class="notice">कोई सामान नहीं मिला। दूसरा नाम खोजें।</div>';
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();openDrawer()}
+function buyNow(id){cart[id]=(cart[id]||0)+1;renderCart();openDrawer()}
+function renderCart(){
+ const entries=Object.entries(cart).filter(([id,qty])=>qty>0);
+ document.getElementById('cartCount').textContent=entries.reduce((s,[id,q])=>s+q,0);
+ document.getElementById('cartItems').innerHTML=entries.length?entries.map(([id,qty])=>{const p=products.find(x=>x.id===+id);return `<div class="cartitem"><div class="mini">${p.emoji}</div><div><b>${p.name}</b><div>${money(p.price)}</div><div class="qty"><button onclick="changeQty(${id},-1)">−</button><span>${qty}</span><button onclick="changeQty(${id},1)">+</button></div></div><b>${money(p.price*qty)}</b></div>`}).join(''):'<div class="empty">आपका कार्ट खाली है।<br>अपनी पसंद का सामान जोड़ें। 🛍️</div>';
+ const total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id===+id).price*q,0);
+ document.getElementById('cartTotal').textContent='कुल: '+money(total);
+}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+document.getElementById('openCart').addEventListener('click',()=>{renderCart();openDrawer()});
+document.getElementById('closeCart').addEventListener('click',closeDrawer);
+document.getElementById('overlay').addEventListener('click',closeDrawer);
+document.getElementById('searchInput').addEventListener('input',renderProducts);
+document.getElementById('categorySelect').addEventListener('change',renderProducts);
+document.getElementById('searchBtn').addEventListener('click',()=>{renderProducts();document.getElementById('products').scrollIntoView({behavior:'smooth'})});
+document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{document.getElementById('categorySelect').value=b.dataset.cat;renderProducts();document.getElementById('products').scrollIntoView({behavior:'smooth'})}));
+document.querySelectorAll('[data-filter]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('categorySelect').value=a.dataset.filter;renderProducts()}));
+document.getElementById('sendOrder').addEventListener('click',()=>{
+ const entries=Object.entries(cart).filter(([id,qty])=>qty>0);
+ if(!entries.length){alert('पहले कार्ट में सामान जोड़ें।');return}
+ const name=document.getElementById('customerName').value.trim();
+ const phone=document.getElementById('customerPhone').value.trim();
+ const address=document.getElementById('customerAddress').value.trim();
+ if(!name||!phone||!address){alert('कृपया नाम, मोबाइल नंबर और पूरा पता भरें।');return}
+ if(!/^[6-9]\d{9}$/.test(phone)){alert('कृपया सही 10 अंकों का भारतीय मोबाइल नंबर भरें।');return}
+ const lines=entries.map(([id,qty])=>{const p=products.find(x=>x.id===+id);return `• ${p.name} × ${qty} = ${money(p.price*qty)}`});
+ const total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id===+id).price*q,0);
+ const msg=`नमस्ते Village Product! मुझे यह ऑर्डर करना है:\n\n${lines.join('\n')}\n\nकुल सामान की कीमत: ${money(total)}\n\nग्राहक का नाम: ${name}\nमोबाइल: ${phone}\nपता: ${address}\n\nकृपया उपलब्धता और डिलीवरी की पुष्टि करें।`;
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank');
+});
+renderProducts();renderCart();
+</script>
+</body>
+</html>
