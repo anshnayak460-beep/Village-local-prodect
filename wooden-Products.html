@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>लकड़ी के सामान</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
+<header class="top">
+  <a href="index.html">
+    <div class="brand">🌿 Village <span>Product</span></div>
+  </a>
+
+  <a href="User- cart.html">
+    🛒 कार्ट (<span data-cart-count>0</span>)
+  </a>
+</header>
+
+<nav class="nav">
+  <a href="index.html">होम</a>
+  <a href="clay-products.html">मिट्टी के सामान</a>
+  <a href="wooden-Products.html">लकड़ी के सामान</a>
+  <a href="home-page.html">सभी प्रोडक्ट</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>🪵 लकड़ी के सामान</h1>
+    <p>लकड़ी की चम्मच, खिलौने और सजावटी सामान।</p>
+  </div>
+
+  <div class="heroart">🥄🪑</div>
+</section>
+
+<main class="wrap">
+  <h2>लकड़ी के लोकप्रिय प्रोडक्ट</h2>
+  <div class="grid" id="product-grid"></div>
+</main>
+
+<footer class="footer">
+  Village Product ❤️
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts("product-grid", "wood");
+});
+</script>
+
+</body>
+    </html>
