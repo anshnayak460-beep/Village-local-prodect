@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सभी प्रोडक्ट - Village Product</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
+<header class="top">
+  <a href="index.html">
+    <div class="brand">🌿 Village <span>Product</span></div>
+    <div class="tag">गाँव की कला, आपके घर तक ❤️</div>
+  </a>
+
+  <div class="search">
+    <input id="search" placeholder="प्रोडक्ट खोजें...">
+    <button onclick="location.href='home-page.html'">🔍</button>
+  </div>
+
+  <a href="User- cart.html">
+    🛒 कार्ट (<span data-cart-count>0</span>)
+  </a>
+</header>
+
+<nav class="nav">
+  <a href="index.html">होम</a>
+  <a href="clay-products.html">मिट्टी के सामान</a>
+  <a href="wooden-Products.html">लकड़ी के सामान</a>
+  <a href="home-page.html">सभी प्रोडक्ट</a>
+  <a href="about.html">हमारे बारे में</a>
+</nav>
+
+<main class="wrap">
+
+  <h1>🛍️ सभी प्रोडक्ट</h1>
+
+  <p class="notice">
+    अपनी पसंद के गाँव के उत्पाद खरीदें।
+  </p>
+
+  <p>
+    <button class="btn" data-product-category="all">सभी</button>
+    <button class="btn" data-product-category="clay">मिट्टी</button>
+    <button class="btn" data-product-category="wood">लकड़ी</button>
+  </p>
+
+  <div class="grid" id="product-grid"></div>
+
+</main>
+
+<footer class="footer">
+  Village Product<br>
+  गाँव की कला, आपके घर तक ❤️
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+});
+</script>
+
+</body>
+  </html>
