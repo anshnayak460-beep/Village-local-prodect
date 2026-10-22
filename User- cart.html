@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मेरा कार्ट</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
+<header class="top">
+  <a href="index.html">
+    <div class="brand">🌿 Village <span>Product</span></div>
+  </a>
+
+  <a href="home-page.html">और सामान देखें</a>
+</header>
+
+<nav class="nav">
+  <a href="index.html">होम</a>
+  <a href="home-page.html">सभी प्रोडक्ट</a>
+  <a href="clay-products.html">मिट्टी के सामान</a>
+  <a href="wooden-Products.html">लकड़ी के सामान</a>
+</nav>
+
+<main class="wrap">
+
+  <h1>🛒 मेरा कार्ट</h1>
+
+  <div class="two-col">
+
+    <section class="panel">
+      <h2>आपके सामान</h2>
+
+      <div id="cart-list"></div>
+
+      <h2>
+        कुल: <span id="cart-total">₹0</span>
+      </h2>
+    </section>
+
+    <section class="panel">
+
+      <h2>डिलीवरी की जानकारी</h2>
+
+      <form class="form" onsubmit="return false">
+
+        <input
+          id="customer-name"
+          placeholder="आपका पूरा नाम"
+          required
+        >
+
+        <input
+          id="customer-phone"
+          type="tel"
+          placeholder="आपका मोबाइल नंबर"
+          required
+        >
+
+        <textarea
+          id="customer-address"
+          rows="4"
+          placeholder="गाँव, शहर, जिला और पिन कोड"
+          required
+        ></textarea>
+
+        <button
+          class="btn"
+          id="send-order"
+          type="button"
+        >
+          🟢 WhatsApp पर ऑर्डर भेजें
+        </button>
+
+      </form>
+
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  Village Product ❤️
+</footer>
+
+<script src="assets/app.js"></script>
+
+</body>
+    </html>
