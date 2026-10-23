@@ -1,66 +1,62 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>प्रोडक्ट की जानकारी</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Details | GramBazaar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="top">
-  <a href="index.html">
-    <div class="brand">🌿 Village <span>Product</span></div>
-  </a>
+<header class="header">
+  <nav class="nav">
+    <a class="logo" href="home-page.html">Gram<span>Bazaar</span></a>
 
-  <a href="User- cart.html">🛒 मेरा कार्ट</a>
+    <div class="navlinks">
+      <a href="home-page.html">Home</a>
+      <a href="clay-products.html">Clay Products</a>
+      <a href="images.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="User- cart.html">Cart (<b data-cart-count>0</b>)</a>
+    </div>
+  </nav>
 </header>
 
-<nav class="nav">
-  <a href="index.html">होम</a>
-  <a href="home-page.html">सभी प्रोडक्ट</a>
-  <a href="clay-products.html">मिट्टी के सामान</a>
-  <a href="wooden-Products.html">लकड़ी के सामान</a>
-</nav>
+<main class="container">
 
-<main class="wrap">
-
-  <h1>प्रोडक्ट की जानकारी</h1>
-
-  <div class="two-col">
-
-    <section class="panel">
-      <div style="font-size:120px;text-align:center">🏺</div>
-    </section>
-
-    <section class="panel">
-      <h2>पारंपरिक मिट्टी का घड़ा</h2>
-
-      <div class="price">₹299</div>
-
-      <p>
-        पारंपरिक मिट्टी का घड़ा।
-        घर में पानी रखने के लिए उपयोग किया जा सकता है।
-      </p>
-
-      <button class="btn" onclick="addToCart(1)">
-        🛒 कार्ट में जोड़ें
-      </button>
-
-      <a class="btn" href="User- cart.html">
-        कार्ट देखें
-      </a>
-    </section>
-
+  <div class="page-title">
+    <span class="eyebrow">Discover the details</span>
+    <h1>Product Details</h1>
   </div>
+
+  <div id="productDetail"></div>
+
+  <section class="section">
+    <h2 class="section-title">You may also like</h2>
+    <div class="grid" id="featuredProducts"></div>
+  </section>
 
 </main>
 
 <footer class="footer">
-  Village Product ❤️
+  <div class="footer-inner">
+    <div>
+      <h2>GramBazaar</h2>
+      <p>Village products and traditional crafts.</p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <p><a href="home-page.html">Home</a></p>
+      <p><a href="images.html">Gallery</a></p>
+    </div>
+    <div>
+      <h3>Customer</h3>
+      <p><a href="User- cart.html">Cart</a></p>
+      <p><a href="User-dashboard.html">Dashboard</a></p>
+    </div>
+  </div>
 </footer>
 
-<script src="assets/app.js"></script>
-
+<script src="app.js"></script>
 </body>
-    </html>
+  </html>
