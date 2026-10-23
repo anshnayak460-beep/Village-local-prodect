@@ -1,54 +1,69 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>मिट्टी के सामान</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clay Products | GramBazaar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="top">
-  <a href="index.html">
-    <div class="brand">🌿 Village <span>Product</span></div>
-  </a>
+<div class="topbar">Traditional Village Clay Products</div>
 
-  <a href="User- cart.html">
-    🛒 कार्ट (<span data-cart-count>0</span>)
-  </a>
+<header class="header">
+  <nav class="nav">
+    <a class="logo" href="home-page.html">Gram<span>Bazaar</span></a>
+
+    <div class="navlinks">
+      <a href="home-page.html">Home</a>
+      <a href="clay-products.html">Clay Products</a>
+      <a href="images.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="User- cart.html">Cart (<b data-cart-count>0</b>)</a>
+    </div>
+  </nav>
 </header>
 
-<nav class="nav">
-  <a href="index.html">होम</a>
-  <a href="clay-products.html">मिट्टी के सामान</a>
-  <a href="wooden-Products.html">लकड़ी के सामान</a>
-  <a href="home-page.html">सभी प्रोडक्ट</a>
-</nav>
+<main class="container">
 
-<section class="hero">
-  <div>
-    <h1>🏺 मिट्टी के सामान</h1>
-    <p>घड़े, सुराही, कुल्हड़ और दीये।</p>
+  <div class="page-title">
+    <span class="eyebrow">Crafted from earth</span>
+    <h1>Clay Products</h1>
+    <p class="muted">
+      Discover traditional clay products made with care.
+    </p>
   </div>
 
-  <div class="heroart">🏺🪔</div>
-</section>
+  <div class="notice">
+    Prices are sample prices. Confirm the actual price,
+    material and availability with your seller.
+  </div>
 
-<main class="wrap">
-  <h2>मिट्टी के लोकप्रिय प्रोडक्ट</h2>
-  <div class="grid" id="product-grid"></div>
+  <section class="section">
+    <div class="grid" id="clayProducts"></div>
+  </section>
+
 </main>
 
 <footer class="footer">
-  Village Product ❤️
+  <div class="footer-inner">
+    <div>
+      <h2>GramBazaar</h2>
+      <p>Village products for everyone.</p>
+    </div>
+    <div>
+      <h3>Links</h3>
+      <p><a href="home-page.html">Home</a></p>
+      <p><a href="images.html">Gallery</a></p>
+    </div>
+    <div>
+      <h3>Customer</h3>
+      <p><a href="User- cart.html">Cart</a></p>
+      <p><a href="about.html">About</a></p>
+    </div>
+  </div>
 </footer>
 
-<script src="assets/app.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  renderProducts("product-grid", "clay");
-});
-</script>
-
+<script src="app.js"></script>
 </body>
   </html>
