@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Gallery | GramBazaar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header class="header">
+  <nav class="nav">
+    <a class="logo" href="home-page.html">Gram<span>Bazaar</span></a>
+
+    <div class="navlinks">
+      <a href="home-page.html">Home</a>
+      <a href="clay-products.html">Clay Products</a>
+      <a href="images.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="User- cart.html">Cart (<b data-cart-count>0</b>)</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="page-title">
+    <span class="eyebrow">Village creativity</span>
+    <h1>Product Gallery</h1>
+    <p class="muted">
+      A collection of traditional products and crafts.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" alt="Clay pottery">
+
+    <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80" alt="Traditional diya">
+
+    <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=800&q=80" alt="Woven basket">
+
+    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="Honey">
+
+    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Home decor">
+
+    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80" alt="Grains">
+  </div>
+
+  <p class="notice" style="margin-top:20px">
+    अपनी दुकान की वास्तविक फोटो लगाएँ, ताकि ग्राहक उत्पाद को सही तरीके से पहचान सकें।
+  </p>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h2>GramBazaar</h2>
+      <p>Supporting local village products.</p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <p><a href="home-page.html">Home</a></p>
+      <p><a href="clay-products.html">Clay Products</a></p>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <p><a href="about.html">About Us</a></p>
+      <p><a href="User- cart.html">Shopping Cart</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
