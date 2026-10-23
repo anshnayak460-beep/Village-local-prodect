@@ -1,66 +1,126 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>सभी प्रोडक्ट - Village Product</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GramBazaar | Village Products</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="top">
-  <a href="index.html">
-    <div class="brand">🌿 Village <span>Product</span></div>
-    <div class="tag">गाँव की कला, आपके घर तक ❤️</div>
-  </a>
+<div class="topbar">
+  Village Products | Support Local Makers
+</div>
 
-  <div class="search">
-    <input id="search" placeholder="प्रोडक्ट खोजें...">
-    <button onclick="location.href='home-page.html'">🔍</button>
-  </div>
+<header class="header">
+  <nav class="nav">
+    <a class="logo" href="home-page.html">Gram<span>Bazaar</span></a>
 
-  <a href="User- cart.html">
-    🛒 कार्ट (<span data-cart-count>0</span>)
-  </a>
+    <div class="navlinks">
+      <a href="home-page.html">Home</a>
+      <a href="clay-products.html">Clay Products</a>
+      <a href="images.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="User-dashboard.html">Account</a>
+      <a href="User- cart.html">Cart (<b data-cart-count>0</b>)</a>
+    </div>
+  </nav>
 </header>
 
-<nav class="nav">
-  <a href="index.html">होम</a>
-  <a href="clay-products.html">मिट्टी के सामान</a>
-  <a href="wooden-Products.html">लकड़ी के सामान</a>
-  <a href="home-page.html">सभी प्रोडक्ट</a>
-  <a href="about.html">हमारे बारे में</a>
-</nav>
+<main class="container">
 
-<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Made with love in our villages</span>
 
-  <h1>🛍️ सभी प्रोडक्ट</h1>
+      <h1>
+        Village Products.<br>
+        <span style="color:var(--green)">Natural Traditions.</span>
+      </h1>
 
-  <p class="notice">
-    अपनी पसंद के गाँव के उत्पाद खरीदें।
-  </p>
+      <p>
+        Discover handmade clay products, traditional crafts
+        and village products in one place.
+      </p>
 
-  <p>
-    <button class="btn" data-product-category="all">सभी</button>
-    <button class="btn" data-product-category="clay">मिट्टी</button>
-    <button class="btn" data-product-category="wood">लकड़ी</button>
-  </p>
+      <a class="btn" href="#shop">Shop Products</a>
+      <a class="btn btn-light" href="about.html">Our Story</a>
+    </div>
 
-  <div class="grid" id="product-grid"></div>
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1000&q=80"
+        alt="Traditional handmade products">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Why GramBazaar?</h2>
+
+    <div class="features">
+      <div class="feature">
+        <h3>🌾 Local Products</h3>
+        <p>Explore products from local makers and growers.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🏺 Traditional Crafts</h3>
+        <p>Discover traditional village-made items.</p>
+      </div>
+
+      <div class="feature">
+        <h3>💬 Easy Ordering</h3>
+        <p>Send your order request to the seller through WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shop">
+    <h2 class="section-title">Popular Products</h2>
+    <p class="muted">Discover our village collection.</p>
+
+    <div class="grid" id="featuredProducts"></div>
+
+    <p style="margin-top:20px">
+      <a class="btn" href="clay-products.html">Explore Clay Products</a>
+    </p>
+  </section>
+
+  <section class="banner">
+    <h2>Support Village Artisans ❤️</h2>
+    <p>Discover traditional skills and products.</p>
+    <a class="btn btn-light" href="about.html">Learn More</a>
+  </section>
 
 </main>
 
 <footer class="footer">
-  Village Product<br>
-  गाँव की कला, आपके घर तक ❤️
+  <div class="footer-inner">
+    <div>
+      <h2>GramBazaar</h2>
+      <p>Village products, traditions and craftsmanship.</p>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <p><a href="home-page.html">Home</a></p>
+      <p><a href="clay-products.html">Clay Products</a></p>
+      <p><a href="images.html">Gallery</a></p>
+    </div>
+
+    <div>
+      <h3>Customer</h3>
+      <p><a href="User- cart.html">Shopping Cart</a></p>
+      <p><a href="User-dashboard.html">Dashboard</a></p>
+      <p><a href="about.html">About Us</a></p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 GramBazaar
+  </div>
 </footer>
 
-<script src="assets/app.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  renderProducts();
-});
-</script>
-
+<script src="app.js"></script>
 </body>
   </html>
