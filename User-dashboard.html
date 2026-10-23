@@ -1,75 +1,100 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Dashboard</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Dashboard | GramBazaar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="top">
-  <a href="index.html">
-    <div class="brand">🌿 Village <span>Product</span></div>
-  </a>
+<header class="header">
+  <nav class="nav">
+    <a class="logo" href="home-page.html">Gram<span>Bazaar</span></a>
 
-  <a href="User- cart.html">🛒 मेरा कार्ट</a>
+    <div class="navlinks">
+      <a href="home-page.html">Home</a>
+      <a href="clay-products.html">Products</a>
+      <a href="User- cart.html">Cart (<b data-cart-count>0</b>)</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
 </header>
 
-<nav class="nav">
-  <a href="index.html">होम</a>
-  <a href="home-page.html">प्रोडक्ट</a>
-  <a href="User-dashboard.html">डैशबोर्ड</a>
-  <a href="about.html">हमारे बारे में</a>
-</nav>
+<main class="container">
 
-<main class="wrap">
+  <div class="page-title">
+    <span class="eyebrow">Customer area</span>
+    <h1>My Dashboard</h1>
+    <p class="muted">Manage your details on this device.</p>
+  </div>
 
-  <section class="hero">
-    <div>
-      <h1>यूज़र डैशबोर्ड</h1>
+  <section class="panel">
+    <h2>My Profile</h2>
 
-      <p>
-        Village Product में आपका स्वागत है।
-        यहाँ से प्रोडक्ट देख सकते हैं और कार्ट खोल सकते हैं।
-      </p>
+    <p class="muted">
+      यह डेमो प्रोफाइल है। इसमें वास्तविक अकाउंट लॉगिन शामिल नहीं है।
+    </p>
 
-      <a class="btn" href="home-page.html">
-        प्रोडक्ट देखें
-      </a>
+    <div class="form-grid">
+      <div class="field">
+        <label for="dashName">Full Name</label>
+        <input id="dashName" placeholder="Your name">
+      </div>
 
-      <a class="btn" href="User- cart.html">
-        मेरा कार्ट
-      </a>
+      <div class="field">
+        <label for="dashPhone">Mobile Number</label>
+        <input id="dashPhone" type="tel" placeholder="Your mobile">
+      </div>
+
+      <div class="field full">
+        <label for="dashAddress">Address</label>
+        <textarea id="dashAddress"
+          placeholder="Your delivery address"></textarea>
+      </div>
     </div>
 
-    <div class="heroart">👤🛍️</div>
+    <button style="margin-top:15px" onclick="saveProfile()">
+      Save Details
+    </button>
+
+    <p id="savedMessage" class="muted"></p>
   </section>
 
   <section class="panel">
-    <h2>ऑर्डर कैसे करें?</h2>
+    <h2>My Shopping</h2>
+    <p>Items in cart: <strong id="dashItems">0</strong></p>
 
-    <ol>
-      <li>अपना प्रोडक्ट चुनें।</li>
-      <li>कार्ट में जोड़ें।</li>
-      <li>अपना पता भरें।</li>
-      <li>WhatsApp पर ऑर्डर भेजें।</li>
-    </ol>
-
-    <p class="muted">
-      यह बेसिक डेमो डैशबोर्ड है।
-      वास्तविक लॉगिन और ऑर्डर हिस्ट्री के लिए
-      बैकएंड की जरूरत होगी।
-    </p>
+    <a class="btn" href="User- cart.html">Open Cart</a>
+    <a class="btn btn-light" href="home-page.html">Continue Shopping</a>
   </section>
+
+  <div class="notice">
+    आपकी प्रोफाइल इसी ब्राउज़र में सेव होगी। इसे वास्तविक लॉगिन सिस्टम
+    समझकर उपयोग न करें।
+  </div>
 
 </main>
 
 <footer class="footer">
-  Village Product ❤️
+  <div class="footer-inner">
+    <div>
+      <h2>GramBazaar</h2>
+      <p>Village products for everyone.</p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <p><a href="home-page.html">Home</a></p>
+      <p><a href="images.html">Gallery</a></p>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <p><a href="about.html">About</a></p>
+      <p><a href="User- cart.html">Cart</a></p>
+    </div>
+  </div>
 </footer>
 
-<script src="assets/app.js"></script>
-
+<script src="app.js"></script>
 </body>
-                      </html>
+        </html>
